@@ -2,10 +2,6 @@ name: Decompile Large APK to Repo
 
 on:
   workflow_dispatch:
-    inputs:
-      apk_url:
-        description: 'Прямая ссылка на скачивание APK'
-        required: true
 
 permissions:
   contents: write
@@ -17,15 +13,47 @@ jobs:
       - name: Скачать текущий репозиторий
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Необходимо для корректной работы с историей и пуша
+          fetch-depth: 0
 
-      - name: Очистить старые папки декомпиляции (если есть)
+      - name: Найти APK файлы в репозитории
+        id: find_apk
+        run: |
+          echo "Поиск APK файлов в репозитории..."
+          APK_FILES=$(find . -name "*.apk" -type f | grep -v "output_apktool" | grep -v "output_jadx" || true)
+          
+          if [ -z "$APK_FILES" ]; then
+            echo "::error::APK файлы не найдены в репозитории"
+            echo "Содержимое корня:"
+            ls -la
+            exit 1
+          fi
+          
+          echo "Найдены APK файлы:"
+          echo "$APK_FILES"
+          
+          # Берем первый найденный APK
+          APK_PATH=$(echo "$APK_FILES" | head -n 1)
+          echo "Используемый файл: $APK_PATH"
+          
+          echo "apk_path=$APK_PATH" >> $GITHUB_OUTPUT
+          
+          echo "Информация о файле:"
+          ls -lh "$APK_PATH"
+          file "$APK_PATH"
+
+      - name: Проверить валидность APK
+        run: |
+          APK="${{ steps.find_apk.outputs.apk_path }}"
+          if ! file "$APK" | grep -q "Zip archive data"; then
+            echo "::error::Файл $APK не является валидным APK/ZIP архивом"
+            head -c 500 "$APK"
+            exit 1
+          fi
+
+      - name: Очистить старые папки декомпиляции
         run: |
           git rm -rf --cached output_apktool output_jadx || true
           rm -rf output_apktool output_jadx
-
-      - name: Скачать APK файл
-        run: curl -L "${{ inputs.apk_url }}" -o target.apk
 
       - name: Установить Java
         uses: actions/setup-java@v4
@@ -36,19 +64,19 @@ jobs:
       - name: Установить apktool и jadx
         run: |
           sudo apt-get update
-          sudo apt-get install -y apktool unzip
-          # Исправлена прямая ссылка на стабильный релиз jadx
+          sudo apt-get install -y unzip wget
+          wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.9.3.jar -O apktool.jar
           wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O jadx.zip
           unzip -q jadx.zip -d jadx-bin
           chmod +x jadx-bin/bin/jadx
 
       - name: Декомпиляция через apktool
-        run: apktool d target.apk -o output_apktool -f
+        run: java -jar apktool.jar d "${{ steps.find_apk.outputs.apk_path }}" -o output_apktool -f
 
       - name: Декомпиляция через jadx
         env:
           JAVA_OPTS: "-Xmx6g"
-        run: jadx-bin/bin/jadx -j 4 -d output_jadx target.apk
+        run: jadx-bin/bin/jadx -j 4 -d output_jadx "${{ steps.find_apk.outputs.apk_path }}"
 
       - name: Закоммитить и отправить папки в репозиторий
         run: |
@@ -59,4 +87,4 @@ jobs:
           git push
 
       - name: Очистить временные файлы
-        run: rm -rf target.apk jadx.zip jadx-bin
+        run: rm -rf jadx.zip jadx-bin apktool.jar
