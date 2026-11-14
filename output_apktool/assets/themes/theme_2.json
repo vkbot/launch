@@ -1,0 +1,67 @@
+{
+  "_comment": "Design 2 — cyan (#A0E8F0). Maps to firmware theme.mode=1.",
+  "nav": {
+    "bg":          "theme_bg_2",
+    "btnOffsetX":  10
+  },
+  "cover": {
+    "bg":    "cover_theme_2_bg",
+    "plain": "cover_theme_2_plain"
+  },
+  "indicator": {
+    "normal":   "indicator_theme_2_n",
+    "selected": "indicator_theme_2_p"
+  },
+  "toggle": {
+    "track": "toggle_two_track",
+    "thumb": "toggle_two_thumb"
+  },
+  "button": {
+    "primary":          "btn_two_primary",
+    "short":            "btn_two_short",
+    "long":             "btn_two_long",
+    "arrow":            "arrow_two",
+    "primaryFillColor": "#FF00BCD4",
+    "primaryTextColor": "#FFE0F8FB",
+    "textColor":        "#FFE0F8FB"
+  },
+  "dialog": {
+    "bg":    "dialog_bg_two",
+    "check": "dialog_check_two"
+  },
+  "color": {
+    "icon":          "#FFA0E8F0",
+    "iconDim":       "#FF95C8CE",
+    "iconAccent":    "#FFC8F4FA",
+    "secondaryText": "#80FFFFFF",
+    "toggleAccent":  "#FF00BCD4",
+    "appLabel":      "#FFFFFFFF",
+    "textOnAccent": "#FF000000",
+    "accent":       "#FF00BCD4",
+    "accentDim":    "#FF0097A7",
+    "error":        "#FFFF6B6B",
+    "surface":      "#F0151E22",
+    "surfaceAlt":   "#FF1F3035",
+    "divider":      "#FF2A4A50",
+    "scrim":        "#CC000000",
+
+    "btnBorder":      "#FF1F4045",
+    "btnBackground":  "#FF152025",
+    "btnActiveLight": "#FFE0F8FB",
+    "btnActiveDim":   "#FFA0E8F0"
+  },
+  "size": {
+    "titleLarge":  44,
+    "titleMedium": 30,
+    "title":       36,
+    "body":        24,
+    "bodySmall":   22,
+    "caption":     32,
+    "clock":       48
+  },
+  "_statusBar": "Right SystemUI column (systemuitwooverlay): text_default + status_bar_ac_bg centre pixel.",
+  "statusBar": {
+    "textColor":  "#7FFFFFFF",
+    "plateColor": "#CC14171A"
+  }
+}

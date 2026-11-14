@@ -1,0 +1,50 @@
+{
+  "navPanel": {
+    "default": {
+      "buttonSize": 56,
+      "spacer": 45
+    },
+    "backHidden": {
+      "buttonSize": 67,
+      "spacer": 54
+    }
+  },
+  "preset": {
+    "small": {
+      "itemSize": 96,
+      "iconSize": 72,
+      "containerSize": 80,
+      "cardIconSize": 54,
+      "marginV": 32,
+      "sidebarWidth": 120,
+      "maxFit": 5,
+      "editBtnSize": 40,
+      "editBtnPad": 8,
+      "editBtnOffset": 10
+    },
+    "medium": {
+      "itemSize": 134,
+      "iconSize": 101,
+      "containerSize": 112,
+      "cardIconSize": 76,
+      "marginV": 45,
+      "sidebarWidth": 160,
+      "maxFit": 4,
+      "editBtnSize": 56,
+      "editBtnPad": 11,
+      "editBtnOffset": 14
+    },
+    "large": {
+      "itemSize": 178,
+      "iconSize": 133,
+      "containerSize": 148,
+      "cardIconSize": 100,
+      "marginV": 59,
+      "sidebarWidth": 210,
+      "maxFit": 3,
+      "editBtnSize": 74,
+      "editBtnPad": 15,
+      "editBtnOffset": 18
+    }
+  }
+}

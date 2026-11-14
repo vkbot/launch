@@ -1,0 +1,6 @@
+.class public interface abstract Lfk;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lc6;

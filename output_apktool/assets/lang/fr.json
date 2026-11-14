@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "Français",
+    "ru": "Russe",
+    "en": "Anglais",
+    "tr": "Turc",
+    "pt": "Portugais",
+    "fr": "Français",
+    "kk": "Kazakh",
+    "ms": "Malais",
+    "es": "Espagnol",
+    "zh": "Chinois"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "yes": "Oui",
+    "ok": "OK",
+    "delete": "Supprimer",
+    "install": "Installer",
+    "update": "Mettre à jour",
+    "loading": "Chargement..."
+  },
+  "appList": {
+    "title": "Applications",
+    "deleteHint": "Appui long pour désinstaller ou mettre à jour",
+    "reorderHint": "Maintenez une icône et faites-la glisser vers un nouvel emplacement"
+  },
+  "presetBar": {
+    "add": "Ajouter"
+  },
+  "modeSelector": {
+    "fullscreen": "Plein écran",
+    "split": "Écran partagé"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "unifiedLauncher": "Lanceur unifié",
+    "unifiedLauncherDesc": "Notre écran d'accueil avec toutes les applis à la place de celui d'origine",
+    "presetSize": "Taille des préréglages",
+    "presetSizeDesc": "Petit · Moyen · Grand",
+    "covers": "Pochettes d'applications",
+    "coversDesc": "Avec fond · Sobre · Noir",
+    "hideBack": "Masquer le bouton « Retour »",
+    "hideBackDesc": "Masque « Retour » dans la colonne de gauche. Les autres boutons grandissent de 20 %",
+    "sportKey": "Mode Sport sur la touche ★",
+    "sportKeyDesc": "La touche ★ du volant active le Sport ; appuyez encore — mode précédent",
+    "autostart": "Démarrage automatique du lanceur",
+    "autostartDesc": "Au démarrage : Préréglages · Rien · Applications",
+    "timeZone": "Fuseau horaire",
+    "clockHourSuffix": "h",
+    "language": "Langue de l'interface",
+    "languageDesc": "Choisir la langue du lanceur",
+    "updateLauncher": "Mettre à jour le lanceur",
+    "updateLauncherDesc": "Version actuelle : ",
+    "checkButton": "Vérifier"
+  },
+  "presetSize": {
+    "small": "Petit",
+    "medium": "Moyen",
+    "large": "Grand"
+  },
+  "autostart": {
+    "last": "Comme à l'arrêt",
+    "presets": "Préréglages",
+    "nothing": "Rien",
+    "apps": "Applications",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "Avec fond",
+    "noBg": "Sobre",
+    "black": "Noir"
+  },
+  "unifiedMode": {
+    "off": "Désactivé",
+    "on": "Activé",
+    "androidAuto": "Avec Android Auto",
+    "carPlay": "Avec CarPlay",
+    "both": "Avec Android Auto et CarPlay"
+  },
+  "activation": {
+    "title": "Application non activée",
+    "deviceId": "ID de l'appareil : ",
+    "enterCode": "Saisissez le code d'activation :",
+    "wrongCode": "Code d'activation invalide",
+    "emptyCode": "Saisissez le code",
+    "site": "Site : ",
+    "later": "Plus tard",
+    "laterRemaining": "restant",
+    "launchOne": "lancement",
+    "launchFew": "lancements",
+    "launchMany": "lancements",
+    "activate": "Activer",
+    "delete": "Désinstaller",
+    "activateOnline": "Activer en ligne",
+    "onlineFailed": "Échec de l'activation en ligne"
+  },
+  "remoteApp": {
+    "size": "Taille : ",
+    "description": "Description :",
+    "downloading": "Téléchargement ",
+    "downloadingPercent": "%...",
+    "installing": "Installation...",
+    "installed": "Installé !",
+    "error": "Erreur : ",
+    "downloadError": "Erreur de téléchargement",
+    "networkError": "Pas de connexion Internet"
+  },
+  "uninstall": {
+    "confirmTitle": "Désinstaller ",
+    "uninstalled": "Désinstallé !",
+    "replaceConfirm": "Impossible d'installer par-dessus la version actuelle. Supprimer l'application et installer celle-ci ? Les données de l'application seront effacées."
+  },
+  "appStorage": {
+    "onDisk": "Sur le disque : ",
+    "cache": "Cache : ",
+    "data": "Données : ",
+    "clear": "Effacer",
+    "clearDataConfirm": "Effacer toutes les données de %s ? Comptes, réglages et contenus téléchargés seront supprimés."
+  },
+  "launcherUpdate": {
+    "title": "Mise à jour du lanceur",
+    "latestVersion": "Dernière version : ",
+    "currentVersion": "Version actuelle : ",
+    "checking": "Recherche de mises à jour...",
+    "noUpdate": "Impossible d'obtenir les informations de version",
+    "downloadFailed": "Erreur de téléchargement",
+    "installing": "Installation...",
+    "installSuccess": "Installé !",
+    "changes": "Nouveautés :"
+  },
+  "accessibilityError": {
+    "title": "Le lanceur n'a pas démarré",
+    "reasonNotInstalled": "Le service d'accessibilité n'est pas visible par le système. Le démarrage est peut-être encore en cours, ou d'autres applications le bloquent.",
+    "reasonNotEnabled": "Le service du lanceur n'est pas activé par le système. Appuyez sur « Réessayer » ou « Redémarrer le lanceur ».",
+    "reasonNotBinding": "Le service est activé mais ne répond pas. Le redémarrage du lanceur devrait résoudre le problème.",
+    "reasonGaveUp": "Échec après de nombreuses tentatives. D'autres applications surchargent peut-être le système au démarrage.",
+    "diagAttempts": "Tentatives de récupération :",
+    "diagInstalled": "Lanceur visible par le système :",
+    "diagEnabled": "Lanceur activé :",
+    "diagBootTime": "Temps depuis le démarrage :",
+    "diagYes": "OUI",
+    "diagNo": "NON",
+    "secondsSuffix": "s",
+    "btnRetry": "Fermer le lanceur",
+    "btnSettings": "Paramètres d'accessibilité",
+    "btnRestart": "Redémarrer l'appareil"
+  },
+  "storage": {
+    "title": "La mémoire de l'appareil est presque pleine",
+    "message": "Libérez de l'espace maintenant. Ne coupez pas le contact avant de l'avoir fait, sinon l'autoradio risque de ne plus démarrer.",
+    "free": "%d Mo libres"
+  },
+  "taskManager": {
+    "title": "Applications ouvertes",
+    "empty": "Aucune application ouverte",
+    "swipeHint": "Faites glisser une carte vers le haut pour fermer l'application",
+    "memory": "RAM : %1$s sur %2$s utilisés · %3$s libres",
+    "mb": "Mo",
+    "gb": "Go",
+    "notInMemory": "pas en mémoire",
+    "preset": "Préréglage %1$d"
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/dialogLanguageRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/dialogLanguageTitle"
+        style="@style/DialogTitleText"/>
+    <GridLayout
+        android:id="@+id/dialogLanguageGrid"
+        style="@style/DialogLanguageGrid"/>
+</LinearLayout>

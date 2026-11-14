@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "English",
+    "ru": "Russian",
+    "en": "English",
+    "tr": "Turkish",
+    "pt": "Portuguese",
+    "fr": "French",
+    "kk": "Kazakh",
+    "ms": "Malay",
+    "es": "Spanish",
+    "zh": "Chinese"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "ok": "OK",
+    "delete": "Delete",
+    "install": "Install",
+    "update": "Update",
+    "loading": "Loading..."
+  },
+  "appList": {
+    "title": "Apps",
+    "deleteHint": "Long-press to uninstall or update",
+    "reorderHint": "Hold an icon and drag it to a new place"
+  },
+  "presetBar": {
+    "add": "Add"
+  },
+  "modeSelector": {
+    "fullscreen": "Fullscreen",
+    "split": "Split screen"
+  },
+  "settings": {
+    "title": "Settings",
+    "unifiedLauncher": "Unified launcher",
+    "unifiedLauncherDesc": "Our home screen with all apps instead of the stock one",
+    "presetSize": "Preset size",
+    "presetSizeDesc": "Small · Medium · Large",
+    "covers": "App covers",
+    "coversDesc": "With background · Plain · Black",
+    "hideBack": "Hide «Back» button",
+    "hideBackDesc": "Hides «Back» in the left column. Other buttons grow by 20%",
+    "sportKey": "Sport mode on ★ key",
+    "sportKeyDesc": "Steering wheel ★ toggles Sport; press again — previous mode",
+    "autostart": "Launcher autostart",
+    "autostartDesc": "What to launch on start: Presets · Nothing · Apps",
+    "timeZone": "Time zone",
+    "clockHourSuffix": "h",
+    "language": "Interface language",
+    "languageDesc": "Choose launcher language",
+    "updateLauncher": "Update launcher",
+    "updateLauncherDesc": "Current version: ",
+    "checkButton": "Check"
+  },
+  "presetSize": {
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large"
+  },
+  "autostart": {
+    "last": "As switched off",
+    "presets": "Presets",
+    "nothing": "Nothing",
+    "apps": "Apps",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "With background",
+    "noBg": "Plain",
+    "black": "Black"
+  },
+  "unifiedMode": {
+    "off": "Off",
+    "on": "On",
+    "androidAuto": "With Android Auto",
+    "carPlay": "With CarPlay",
+    "both": "With Android Auto and CarPlay"
+  },
+  "activation": {
+    "title": "App is not activated",
+    "deviceId": "Device ID: ",
+    "enterCode": "Enter activation code:",
+    "wrongCode": "Invalid activation code",
+    "emptyCode": "Enter the code",
+    "site": "Site: ",
+    "later": "Later",
+    "laterRemaining": "remaining",
+    "launchOne": "launch",
+    "launchFew": "launches",
+    "launchMany": "launches",
+    "activate": "Activate",
+    "delete": "Uninstall",
+    "activateOnline": "Activate online",
+    "onlineFailed": "Online activation failed"
+  },
+  "remoteApp": {
+    "size": "Size: ",
+    "description": "Description:",
+    "downloading": "Downloading ",
+    "downloadingPercent": "%...",
+    "installing": "Installing...",
+    "installed": "Installed!",
+    "error": "Error: ",
+    "downloadError": "Download error",
+    "networkError": "No internet connection"
+  },
+  "uninstall": {
+    "confirmTitle": "Uninstall ",
+    "uninstalled": "Uninstalled!",
+    "replaceConfirm": "Can't install over the current version. Remove the app and install this one? App data will be erased."
+  },
+  "appStorage": {
+    "onDisk": "On disk: ",
+    "cache": "Cache: ",
+    "data": "Data: ",
+    "clear": "Clear",
+    "clearDataConfirm": "Clear all data of %s? Accounts, settings and downloaded content will be erased."
+  },
+  "launcherUpdate": {
+    "title": "Launcher update",
+    "latestVersion": "Latest version: ",
+    "currentVersion": "Current version: ",
+    "checking": "Checking for updates...",
+    "noUpdate": "Could not fetch version info",
+    "downloadFailed": "Download error",
+    "installing": "Installing...",
+    "installSuccess": "Installed!",
+    "changes": "What's new:"
+  },
+  "accessibilityError": {
+    "title": "Launcher didn't start",
+    "reasonNotInstalled": "Accessibility service is not visible to the system. The system may still be booting, or other apps are interfering with it.",
+    "reasonNotEnabled": "Launcher service is not activated by the system. Tap «Try again» or «Restart launcher».",
+    "reasonNotBinding": "The service is enabled but not responding. Restarting the launcher will likely fix it.",
+    "reasonGaveUp": "Could not start after many attempts. Other apps may be overloading the system at boot.",
+    "diagAttempts": "Recovery attempts:",
+    "diagInstalled": "Launcher visible to system:",
+    "diagEnabled": "Launcher activated:",
+    "diagBootTime": "Time since boot:",
+    "diagYes": "YES",
+    "diagNo": "NO",
+    "secondsSuffix": "sec",
+    "btnRetry": "Unload launcher",
+    "btnSettings": "Accessibility settings",
+    "btnRestart": "Reboot head unit"
+  },
+  "storage": {
+    "title": "Device storage is almost full",
+    "message": "Free up space now. Do not switch off the ignition until you do — otherwise the head unit may fail to start.",
+    "free": "%d MB free"
+  },
+  "taskManager": {
+    "title": "Running apps",
+    "empty": "No running apps",
+    "swipeHint": "Swipe a card up to close the app",
+    "memory": "RAM: %1$s of %2$s used · %3$s free",
+    "mb": "MB",
+    "gb": "GB",
+    "notInMemory": "not in memory",
+    "preset": "Preset %1$d"
+  }
+}

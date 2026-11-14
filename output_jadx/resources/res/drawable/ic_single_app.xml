@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="80dp"
+    android:width="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <path
+        android:fillColor="@color/btn_active_light"
+        android:pathData="M12,8 L68,8 C70.2,8 72,9.8 72,12 L72,68 C72,70.2 70.2,72 68,72 L12,72 C9.8,72 8,70.2 8,68 L8,12 C8,9.8 9.8,8 12,8 Z"
+        android:strokeColor="@color/btn_active_light"
+        android:strokeWidth="3"
+        android:fillAlpha="0.2"/>
+</vector>

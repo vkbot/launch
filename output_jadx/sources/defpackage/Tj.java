@@ -1,0 +1,56 @@
+package defpackage;
+
+import android.content.ClipData;
+import android.content.Context;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.Spanned;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+/* loaded from: classes.dex */
+public final class Tj implements Se {
+    public final K5 a(View view, K5 k5) {
+        CharSequence coerceToStyledText;
+        if (Log.isLoggable("ReceiveContent", 3)) {
+            Log.d("ReceiveContent", "onReceive: " + k5);
+        }
+        if (k5.a.e() == 2) {
+            return k5;
+        }
+        J5 j5 = k5.a;
+        ClipData g = j5.g();
+        int m = j5.m();
+        TextView textView = (TextView) view;
+        Editable editable = (Editable) textView.getText();
+        Context context = textView.getContext();
+        boolean z = false;
+        for (int i = 0; i < g.getItemCount(); i++) {
+            ClipData.Item itemAt = g.getItemAt(i);
+            if ((m & 1) != 0) {
+                coerceToStyledText = itemAt.coerceToText(context);
+                if (coerceToStyledText instanceof Spanned) {
+                    coerceToStyledText = coerceToStyledText.toString();
+                }
+            } else {
+                coerceToStyledText = itemAt.coerceToStyledText(context);
+            }
+            if (coerceToStyledText != null) {
+                if (z) {
+                    editable.insert(Selection.getSelectionEnd(editable), "\n");
+                    editable.insert(Selection.getSelectionEnd(editable), coerceToStyledText);
+                } else {
+                    int selectionStart = Selection.getSelectionStart(editable);
+                    int selectionEnd = Selection.getSelectionEnd(editable);
+                    int max = Math.max(0, Math.min(selectionStart, selectionEnd));
+                    int max2 = Math.max(0, Math.max(selectionStart, selectionEnd));
+                    Selection.setSelection(editable, max2);
+                    editable.replace(max, max2, coerceToStyledText);
+                    z = true;
+                }
+            }
+        }
+        return null;
+    }
+}

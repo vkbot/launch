@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center|top" android:orientation="vertical" android:id="@id/navPanelRoot" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/btnNavPresets" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_nav_presets" android:scaleType="fitCenter" />
+    <ImageView android:id="@id/btnNavBack" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_nav_back" android:scaleType="fitCenter" />
+    <ImageView android:id="@id/btnNavApps" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_nav_apps" android:scaleType="fitCenter" />
+    <ImageView android:id="@id/btnNavFactoryApps" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_nav_factory_apps" android:scaleType="fitCenter" />
+    <ImageView android:id="@id/btnNavHome" android:background="?android:selectableItemBackgroundBorderless" android:layout_width="56.0dip" android:layout_height="56.0dip" android:src="@drawable/ic_nav_home" android:scaleType="fitCenter" />
+</LinearLayout>

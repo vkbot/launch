@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "Türkçe",
+    "ru": "Rusça",
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "pt": "Portekizce",
+    "fr": "Fransızca",
+    "kk": "Kazakça",
+    "ms": "Malayca",
+    "es": "İspanyolca",
+    "zh": "Çince"
+  },
+  "common": {
+    "cancel": "İptal",
+    "yes": "Evet",
+    "ok": "Tamam",
+    "delete": "Sil",
+    "install": "Yükle",
+    "update": "Güncelle",
+    "loading": "Yükleniyor..."
+  },
+  "appList": {
+    "title": "Uygulamalar",
+    "deleteHint": "Kaldırmak veya güncellemek için basılı tutun",
+    "reorderHint": "Bir simgeyi basılı tutup yeni bir yere sürükleyin"
+  },
+  "presetBar": {
+    "add": "Ekle"
+  },
+  "modeSelector": {
+    "fullscreen": "Tam ekran",
+    "split": "Ekranı böl"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "unifiedLauncher": "Birleşik başlatıcı",
+    "unifiedLauncherDesc": "Fabrika ekranı yerine tüm uygulamaları içeren ana ekranımız",
+    "presetSize": "Hazır ayar boyutu",
+    "presetSizeDesc": "Küçük · Orta · Büyük",
+    "covers": "Uygulama kapakları",
+    "coversDesc": "Arka planlı · Sade · Siyah",
+    "hideBack": "«Geri» düğmesini gizle",
+    "hideBackDesc": "Sol sütundaki «Geri» düğmesini gizler. Diğer düğmeler %20 büyür",
+    "sportKey": "★ tuşunda Spor modu",
+    "sportKeyDesc": "Direksiyon ★ tuşu Spor moduna geçer; tekrar basın — önceki mod",
+    "autostart": "Başlatıcı otomatik başlatma",
+    "autostartDesc": "Başlangıçta neyi açacak: Hazır ayarlar · Hiçbir şey · Uygulamalar",
+    "timeZone": "Saat dilimi",
+    "clockHourSuffix": "s",
+    "language": "Arayüz dili",
+    "languageDesc": "Başlatıcı dilini seçin",
+    "updateLauncher": "Başlatıcıyı güncelle",
+    "updateLauncherDesc": "Geçerli sürüm: ",
+    "checkButton": "Kontrol et"
+  },
+  "presetSize": {
+    "small": "Küçük",
+    "medium": "Orta",
+    "large": "Büyük"
+  },
+  "autostart": {
+    "last": "Kapatıldığı gibi",
+    "presets": "Hazır ayarlar",
+    "nothing": "Hiçbir şey",
+    "apps": "Uygulamalar",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "Arka planlı",
+    "noBg": "Sade",
+    "black": "Siyah"
+  },
+  "unifiedMode": {
+    "off": "Kapalı",
+    "on": "Açık",
+    "androidAuto": "Android Auto ile",
+    "carPlay": "CarPlay ile",
+    "both": "Android Auto ve CarPlay ile"
+  },
+  "activation": {
+    "title": "Uygulama etkinleştirilmedi",
+    "deviceId": "Cihaz kimliği: ",
+    "enterCode": "Etkinleştirme kodunu girin:",
+    "wrongCode": "Geçersiz etkinleştirme kodu",
+    "emptyCode": "Kodu girin",
+    "site": "Site: ",
+    "later": "Daha sonra",
+    "laterRemaining": "kaldı",
+    "launchOne": "başlatma",
+    "launchFew": "başlatma",
+    "launchMany": "başlatma",
+    "activate": "Etkinleştir",
+    "delete": "Kaldır",
+    "activateOnline": "Çevrimiçi etkinleştir",
+    "onlineFailed": "Çevrimiçi etkinleştirme başarısız"
+  },
+  "remoteApp": {
+    "size": "Boyut: ",
+    "description": "Açıklama:",
+    "downloading": "İndiriliyor ",
+    "downloadingPercent": "%...",
+    "installing": "Yükleniyor...",
+    "installed": "Yüklendi!",
+    "error": "Hata: ",
+    "downloadError": "İndirme hatası",
+    "networkError": "İnternet bağlantısı yok"
+  },
+  "uninstall": {
+    "confirmTitle": "Kaldırılsın mı: ",
+    "uninstalled": "Kaldırıldı!",
+    "replaceConfirm": "Mevcut sürümün üzerine kurulamıyor. Uygulama kaldırılıp bu sürüm kurulsun mu? Uygulama verileri silinecek."
+  },
+  "appStorage": {
+    "onDisk": "Diskte: ",
+    "cache": "Önbellek: ",
+    "data": "Veri: ",
+    "clear": "Temizle",
+    "clearDataConfirm": "%s uygulamasının tüm verileri silinsin mi? Hesaplar, ayarlar ve indirilen içerik silinecek."
+  },
+  "launcherUpdate": {
+    "title": "Başlatıcı güncellemesi",
+    "latestVersion": "En son sürüm: ",
+    "currentVersion": "Geçerli sürüm: ",
+    "checking": "Güncellemeler kontrol ediliyor...",
+    "noUpdate": "Sürüm bilgisi alınamadı",
+    "downloadFailed": "İndirme hatası",
+    "installing": "Yükleniyor...",
+    "installSuccess": "Yüklendi!",
+    "changes": "Yenilikler:"
+  },
+  "accessibilityError": {
+    "title": "Başlatıcı başlatılamadı",
+    "reasonNotInstalled": "Erişilebilirlik hizmeti sistem tarafından görülmüyor. Sistem hâlâ başlatılıyor olabilir veya başka uygulamalar engelliyor.",
+    "reasonNotEnabled": "Başlatıcı hizmeti sistem tarafından etkinleştirilmedi. «Yeniden dene» veya «Başlatıcıyı yeniden başlat» öğesine dokunun.",
+    "reasonNotBinding": "Hizmet etkin ama yanıt vermiyor. Başlatıcıyı yeniden başlatmak büyük olasılıkla sorunu çözer.",
+    "reasonGaveUp": "Birçok denemeden sonra başlatılamadı. Başka uygulamalar sistemi açılışta aşırı yüklüyor olabilir.",
+    "diagAttempts": "Kurtarma denemeleri:",
+    "diagInstalled": "Başlatıcı sisteme görünür:",
+    "diagEnabled": "Başlatıcı etkin:",
+    "diagBootTime": "Açılıştan bu yana:",
+    "diagYes": "EVET",
+    "diagNo": "HAYIR",
+    "secondsSuffix": "sn",
+    "btnRetry": "Başlatıcıyı kapat",
+    "btnSettings": "Erişilebilirlik ayarları",
+    "btnRestart": "Cihazı yeniden başlat"
+  },
+  "storage": {
+    "title": "Cihaz belleği doluyor",
+    "message": "Hemen yer açın. Yer açana kadar kontağı kapatmayın, aksi halde ünite açılmayabilir.",
+    "free": "%d MB boş"
+  },
+  "taskManager": {
+    "title": "Çalışan uygulamalar",
+    "empty": "Çalışan uygulama yok",
+    "swipeHint": "Uygulamayı kapatmak için kartı yukarı kaydırın",
+    "memory": "RAM: %2$s içinden %1$s kullanımda · %3$s boş",
+    "mb": "MB",
+    "gb": "GB",
+    "notInMemory": "bellekte değil",
+    "preset": "Hazır ayar %1$d"
+  }
+}

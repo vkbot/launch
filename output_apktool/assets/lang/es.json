@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "Español",
+    "ru": "Ruso",
+    "en": "Inglés",
+    "tr": "Turco",
+    "pt": "Portugués",
+    "fr": "Francés",
+    "kk": "Kazajo",
+    "ms": "Malayo",
+    "es": "Español",
+    "zh": "Chino"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "yes": "Sí",
+    "ok": "OK",
+    "delete": "Eliminar",
+    "install": "Instalar",
+    "update": "Actualizar",
+    "loading": "Cargando..."
+  },
+  "appList": {
+    "title": "Aplicaciones",
+    "deleteHint": "Mantén pulsado para desinstalar o actualizar",
+    "reorderHint": "Mantén pulsado un icono y arrástralo a un nuevo lugar"
+  },
+  "presetBar": {
+    "add": "Añadir"
+  },
+  "modeSelector": {
+    "fullscreen": "Pantalla completa",
+    "split": "Dividir pantalla"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "unifiedLauncher": "Launcher unificado",
+    "unifiedLauncherDesc": "Nuestra pantalla de inicio con todas las apps en lugar de la original",
+    "presetSize": "Tamaño de preajustes",
+    "presetSizeDesc": "Pequeño · Mediano · Grande",
+    "covers": "Portadas de aplicaciones",
+    "coversDesc": "Con fondo · Liso · Negro",
+    "hideBack": "Ocultar botón «Atrás»",
+    "hideBackDesc": "Oculta «Atrás» en la columna izquierda. Otros botones se agrandan un 20%",
+    "sportKey": "Modo Sport en la tecla ★",
+    "sportKeyDesc": "La tecla ★ del volante activa Sport; pulsa de nuevo — modo anterior",
+    "autostart": "Inicio automático del lanzador",
+    "autostartDesc": "Qué iniciar al arrancar: Preajustes · Nada · Aplicaciones",
+    "timeZone": "Zona horaria",
+    "clockHourSuffix": "h",
+    "language": "Idioma de la interfaz",
+    "languageDesc": "Elige el idioma del lanzador",
+    "updateLauncher": "Actualizar lanzador",
+    "updateLauncherDesc": "Versión actual: ",
+    "checkButton": "Comprobar"
+  },
+  "presetSize": {
+    "small": "Pequeño",
+    "medium": "Mediano",
+    "large": "Grande"
+  },
+  "autostart": {
+    "last": "Como se apagó",
+    "presets": "Preajustes",
+    "nothing": "Nada",
+    "apps": "Aplicaciones",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "Con fondo",
+    "noBg": "Liso",
+    "black": "Negro"
+  },
+  "unifiedMode": {
+    "off": "Desactivado",
+    "on": "Activado",
+    "androidAuto": "Con Android Auto",
+    "carPlay": "Con CarPlay",
+    "both": "Con Android Auto y CarPlay"
+  },
+  "activation": {
+    "title": "Aplicación no activada",
+    "deviceId": "ID del dispositivo: ",
+    "enterCode": "Introduce el código de activación:",
+    "wrongCode": "Código de activación inválido",
+    "emptyCode": "Introduce el código",
+    "site": "Sitio: ",
+    "later": "Más tarde",
+    "laterRemaining": "restante",
+    "launchOne": "inicio",
+    "launchFew": "inicios",
+    "launchMany": "inicios",
+    "activate": "Activar",
+    "delete": "Desinstalar",
+    "activateOnline": "Activar en línea",
+    "onlineFailed": "Error de activación en línea"
+  },
+  "remoteApp": {
+    "size": "Tamaño: ",
+    "description": "Descripción:",
+    "downloading": "Descargando ",
+    "downloadingPercent": "%...",
+    "installing": "Instalando...",
+    "installed": "¡Instalado!",
+    "error": "Error: ",
+    "downloadError": "Error de descarga",
+    "networkError": "Sin conexión a Internet"
+  },
+  "uninstall": {
+    "confirmTitle": "Desinstalar ",
+    "uninstalled": "¡Desinstalado!",
+    "replaceConfirm": "No se puede instalar sobre la versión actual. ¿Eliminar la aplicación e instalar esta versión? Los datos de la aplicación se borrarán."
+  },
+  "appStorage": {
+    "onDisk": "En disco: ",
+    "cache": "Caché: ",
+    "data": "Datos: ",
+    "clear": "Borrar",
+    "clearDataConfirm": "¿Borrar todos los datos de %s? Se eliminarán cuentas, ajustes y contenido descargado."
+  },
+  "launcherUpdate": {
+    "title": "Actualización del lanzador",
+    "latestVersion": "Última versión: ",
+    "currentVersion": "Versión actual: ",
+    "checking": "Buscando actualizaciones...",
+    "noUpdate": "No se pudo obtener la información de la versión",
+    "downloadFailed": "Error de descarga",
+    "installing": "Instalando...",
+    "installSuccess": "¡Instalado!",
+    "changes": "Novedades:"
+  },
+  "accessibilityError": {
+    "title": "El lanzador no se inició",
+    "reasonNotInstalled": "El servicio de accesibilidad no es visible para el sistema. Es posible que aún esté arrancando o que otras aplicaciones lo bloqueen.",
+    "reasonNotEnabled": "El servicio del lanzador no está activado por el sistema. Pulse «Reintentar» o «Reiniciar lanzador».",
+    "reasonNotBinding": "El servicio está activo pero no responde. Reiniciar el lanzador suele solucionarlo.",
+    "reasonGaveUp": "No se pudo iniciar tras muchos intentos. Es posible que otras aplicaciones sobrecarguen el sistema al arrancar.",
+    "diagAttempts": "Intentos de recuperación:",
+    "diagInstalled": "Lanzador visible para el sistema:",
+    "diagEnabled": "Lanzador activado:",
+    "diagBootTime": "Tiempo desde el arranque:",
+    "diagYes": "SÍ",
+    "diagNo": "NO",
+    "secondsSuffix": "s",
+    "btnRetry": "Cerrar el lanzador",
+    "btnSettings": "Ajustes de accesibilidad",
+    "btnRestart": "Reiniciar el equipo"
+  },
+  "storage": {
+    "title": "La memoria del dispositivo está casi llena",
+    "message": "Libere espacio ahora. No apague el encendido hasta hacerlo, o el equipo podría no encender.",
+    "free": "%d MB libres"
+  },
+  "taskManager": {
+    "title": "Aplicaciones abiertas",
+    "empty": "No hay aplicaciones abiertas",
+    "swipeHint": "Desliza una tarjeta hacia arriba para cerrar la aplicación",
+    "memory": "RAM: %1$s de %2$s en uso · %3$s libre",
+    "mb": "MB",
+    "gb": "GB",
+    "notInMemory": "no está en memoria",
+    "preset": "Preajuste %1$d"
+  }
+}

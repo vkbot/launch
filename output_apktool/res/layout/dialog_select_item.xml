@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/DialogSelectRowOuter"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/dialogSelectItemRow" style="@style/DialogSelectRowInner">
+        <TextView android:id="@id/dialogSelectItemLabel" style="@style/DialogSelectRowLabel" />
+        <ImageView android:id="@id/dialogSelectItemCheck" style="@style/DialogSelectRowCheck" />
+    </LinearLayout>
+    <View android:id="@id/dialogSelectItemDivider" style="@style/DialogSelectRowDivider" />
+</LinearLayout>

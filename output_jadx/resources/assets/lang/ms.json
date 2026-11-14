@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "Bahasa Melayu",
+    "ru": "Bahasa Rusia",
+    "en": "Bahasa Inggeris",
+    "tr": "Bahasa Turki",
+    "pt": "Bahasa Portugis",
+    "fr": "Bahasa Perancis",
+    "kk": "Bahasa Kazakh",
+    "ms": "Bahasa Melayu",
+    "es": "Bahasa Sepanyol",
+    "zh": "Bahasa Cina"
+  },
+  "common": {
+    "cancel": "Batal",
+    "yes": "Ya",
+    "ok": "OK",
+    "delete": "Padam",
+    "install": "Pasang",
+    "update": "Kemas kini",
+    "loading": "Memuatkan..."
+  },
+  "appList": {
+    "title": "Aplikasi",
+    "deleteHint": "Tekan dan tahan untuk nyahpasang atau kemas kini",
+    "reorderHint": "Tahan ikon dan seret ke tempat baharu"
+  },
+  "presetBar": {
+    "add": "Tambah"
+  },
+  "modeSelector": {
+    "fullscreen": "Skrin penuh",
+    "split": "Bahagi skrin"
+  },
+  "settings": {
+    "title": "Tetapan",
+    "unifiedLauncher": "Pelancar bersatu",
+    "unifiedLauncherDesc": "Skrin utama kami dengan semua aplikasi menggantikan skrin asal",
+    "presetSize": "Saiz pratetap",
+    "presetSizeDesc": "Kecil · Sederhana · Besar",
+    "covers": "Sampul aplikasi",
+    "coversDesc": "Berlatar · Polos · Hitam",
+    "hideBack": "Sembunyikan butang «Kembali»",
+    "hideBackDesc": "Sembunyikan «Kembali» dalam lajur kiri. Butang lain membesar 20%",
+    "sportKey": "Mod Sport pada butang ★",
+    "sportKeyDesc": "Butang ★ stereng menghidupkan Sport; tekan lagi — mod sebelumnya",
+    "autostart": "Mula automatik pelancar",
+    "autostartDesc": "Apa yang dimulakan ketika permulaan: Pratetap · Tiada · Aplikasi",
+    "timeZone": "Zon waktu",
+    "clockHourSuffix": "j",
+    "language": "Bahasa antara muka",
+    "languageDesc": "Pilih bahasa pelancar",
+    "updateLauncher": "Kemas kini pelancar",
+    "updateLauncherDesc": "Versi semasa: ",
+    "checkButton": "Periksa"
+  },
+  "presetSize": {
+    "small": "Kecil",
+    "medium": "Sederhana",
+    "large": "Besar"
+  },
+  "autostart": {
+    "last": "Seperti semasa dimatikan",
+    "presets": "Pratetap",
+    "nothing": "Tiada",
+    "apps": "Aplikasi",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "Berlatar",
+    "noBg": "Polos",
+    "black": "Hitam"
+  },
+  "unifiedMode": {
+    "off": "Mati",
+    "on": "Hidup",
+    "androidAuto": "Dengan Android Auto",
+    "carPlay": "Dengan CarPlay",
+    "both": "Dengan Android Auto dan CarPlay"
+  },
+  "activation": {
+    "title": "Aplikasi tidak diaktifkan",
+    "deviceId": "ID Peranti: ",
+    "enterCode": "Masukkan kod pengaktifan:",
+    "wrongCode": "Kod pengaktifan tidak sah",
+    "emptyCode": "Masukkan kod",
+    "site": "Laman: ",
+    "later": "Kemudian",
+    "laterRemaining": "lagi",
+    "launchOne": "permulaan",
+    "launchFew": "permulaan",
+    "launchMany": "permulaan",
+    "activate": "Aktifkan",
+    "delete": "Nyahpasang",
+    "activateOnline": "Aktifkan dalam talian",
+    "onlineFailed": "Pengaktifan dalam talian gagal"
+  },
+  "remoteApp": {
+    "size": "Saiz: ",
+    "description": "Penerangan:",
+    "downloading": "Memuat turun ",
+    "downloadingPercent": "%...",
+    "installing": "Memasang...",
+    "installed": "Dipasang!",
+    "error": "Ralat: ",
+    "downloadError": "Ralat muat turun",
+    "networkError": "Tiada sambungan Internet"
+  },
+  "uninstall": {
+    "confirmTitle": "Nyahpasang ",
+    "uninstalled": "Dinyahpasang!",
+    "replaceConfirm": "Tidak boleh dipasang di atas versi semasa. Buang aplikasi dan pasang versi ini? Data aplikasi akan dipadam."
+  },
+  "appStorage": {
+    "onDisk": "Pada cakera: ",
+    "cache": "Cache: ",
+    "data": "Data: ",
+    "clear": "Kosongkan",
+    "clearDataConfirm": "Padam semua data %s? Akaun, tetapan dan kandungan yang dimuat turun akan dipadam."
+  },
+  "launcherUpdate": {
+    "title": "Kemas kini pelancar",
+    "latestVersion": "Versi terkini: ",
+    "currentVersion": "Versi semasa: ",
+    "checking": "Memeriksa kemas kini...",
+    "noUpdate": "Tidak dapat memperoleh maklumat versi",
+    "downloadFailed": "Ralat muat turun",
+    "installing": "Memasang...",
+    "installSuccess": "Dipasang!",
+    "changes": "Apa yang baru:"
+  },
+  "accessibilityError": {
+    "title": "Pelancar tidak dapat dimulakan",
+    "reasonNotInstalled": "Khidmat kebolehcapaian tidak kelihatan oleh sistem. Sistem mungkin masih but atau aplikasi lain mengganggunya.",
+    "reasonNotEnabled": "Khidmat pelancar tidak diaktifkan oleh sistem. Ketik «Cuba lagi» atau «Mulakan semula pelancar».",
+    "reasonNotBinding": "Khidmat aktif tetapi tidak bertindak balas. Mulakan semula pelancar berkemungkinan menyelesaikannya.",
+    "reasonGaveUp": "Tidak dapat dimulakan selepas banyak percubaan. Aplikasi lain mungkin membebankan sistem semasa but.",
+    "diagAttempts": "Percubaan pemulihan:",
+    "diagInstalled": "Pelancar boleh dilihat sistem:",
+    "diagEnabled": "Pelancar diaktifkan:",
+    "diagBootTime": "Masa sejak but:",
+    "diagYes": "YA",
+    "diagNo": "TIDAK",
+    "secondsSuffix": "saat",
+    "btnRetry": "Tutup pelancar",
+    "btnSettings": "Tetapan kebolehcapaian",
+    "btnRestart": "Mula semula peranti"
+  },
+  "storage": {
+    "title": "Storan peranti hampir penuh",
+    "message": "Kosongkan ruang sekarang. Jangan matikan penyalaan sehingga selesai, jika tidak unit mungkin gagal dihidupkan.",
+    "free": "%d MB kosong"
+  },
+  "taskManager": {
+    "title": "Aplikasi yang berjalan",
+    "empty": "Tiada aplikasi yang berjalan",
+    "swipeHint": "Leret kad ke atas untuk menutup aplikasi",
+    "memory": "RAM: %1$s daripada %2$s digunakan · %3$s kosong",
+    "mb": "MB",
+    "gb": "GB",
+    "notInMemory": "tiada dalam memori",
+    "preset": "Pratetap %1$d"
+  }
+}

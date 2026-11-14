@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/singleAppOption" android:background="@drawable/mode_selector_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/mode_margin_top" android:layout_marginBottom="@dimen/mode_margin_bottom" android:layout_weight="1.0" android:layout_marginStart="@dimen/mode_margin_outer" android:layout_marginEnd="@dimen/mode_margin_inner">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/singleAppIcon" android:layout_width="@dimen/mode_icon_size" android:layout_height="@dimen/mode_icon_size" android:src="@drawable/ic_single_app" android:contentDescription="Single app" />
+            <TextView android:textSize="@dimen/mode_text_size" android:textColor="@color/app_label" android:id="@id/singleAppLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_large" android:text="@string/mode_fullscreen" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@id/dualAppOption" android:background="@drawable/mode_selector_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/mode_margin_top" android:layout_marginBottom="@dimen/mode_margin_bottom" android:layout_weight="1.0" android:layout_marginStart="@dimen/mode_margin_inner" android:layout_marginEnd="@dimen/mode_margin_outer">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/dualAppIcon" android:layout_width="@dimen/mode_icon_size" android:layout_height="@dimen/mode_icon_size" android:src="@drawable/ic_dual_app" android:contentDescription="Dual apps" />
+            <TextView android:textSize="@dimen/mode_text_size" android:textColor="@color/app_label" android:id="@id/dualAppLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_large" android:text="@string/mode_split" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

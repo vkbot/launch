@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="80dp"
+    android:width="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <path
+        android:fillColor="@color/btn_active_light"
+        android:pathData="M8,8 L36,8 C38.2,8 40,9.8 40,12 L40,68 C40,70.2 38.2,72 36,72 L8,72 L8,8 Z"
+        android:strokeColor="@color/btn_active_light"
+        android:strokeWidth="3"
+        android:fillAlpha="0.2"/>
+    <path
+        android:fillColor="@color/btn_active_light"
+        android:pathData="M44,8 L72,8 L72,72 L44,72 C41.8,72 40,70.2 40,68 L40,12 C40,9.8 41.8,8 44,8 Z"
+        android:strokeColor="@color/btn_active_light"
+        android:strokeWidth="3"
+        android:fillAlpha="0.2"/>
+    <path
+        android:fillColor="@color/btn_active_light"
+        android:pathData="M39,8 L41,8 L41,72 L39,72 Z"/>
+</vector>

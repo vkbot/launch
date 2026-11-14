@@ -1,0 +1,164 @@
+{
+  "lang": {
+    "name": "中文",
+    "ru": "俄语",
+    "en": "英语",
+    "tr": "土耳其语",
+    "pt": "葡萄牙语",
+    "fr": "法语",
+    "kk": "哈萨克语",
+    "ms": "马来语",
+    "es": "西班牙语",
+    "zh": "中文"
+  },
+  "common": {
+    "cancel": "取消",
+    "yes": "是",
+    "ok": "确定",
+    "delete": "删除",
+    "install": "安装",
+    "update": "更新",
+    "loading": "加载中..."
+  },
+  "appList": {
+    "title": "应用",
+    "deleteHint": "长按以卸载或更新",
+    "reorderHint": "按住图标并拖动到新位置"
+  },
+  "presetBar": {
+    "add": "添加"
+  },
+  "modeSelector": {
+    "fullscreen": "全屏",
+    "split": "分屏"
+  },
+  "settings": {
+    "title": "设置",
+    "unifiedLauncher": "统一启动器",
+    "unifiedLauncherDesc": "用包含全部应用的主屏幕替代原厂主屏幕",
+    "presetSize": "预设大小",
+    "presetSizeDesc": "小 · 中 · 大",
+    "covers": "应用封面",
+    "coversDesc": "带背景 · 简洁 · 黑色",
+    "hideBack": "隐藏「返回」按钮",
+    "hideBackDesc": "隐藏左栏中的「返回」。其他按钮变大 20%",
+    "sportKey": "★键切换运动模式",
+    "sportKeyDesc": "方向盘★键开启运动模式；再次按下恢复之前模式",
+    "autostart": "启动器自动启动",
+    "autostartDesc": "启动时打开:预设 · 无 · 应用",
+    "timeZone": "时区",
+    "clockHourSuffix": "小时",
+    "language": "界面语言",
+    "languageDesc": "选择启动器语言",
+    "updateLauncher": "更新启动器",
+    "updateLauncherDesc": "当前版本:",
+    "checkButton": "检查"
+  },
+  "presetSize": {
+    "small": "小",
+    "medium": "中",
+    "large": "大"
+  },
+  "autostart": {
+    "last": "保持熄火前状态",
+    "presets": "预设",
+    "nothing": "无",
+    "apps": "应用",
+    "navi": "YaNavi"
+  },
+  "coversMode": {
+    "withBg": "带背景",
+    "noBg": "简洁",
+    "black": "黑色"
+  },
+  "unifiedMode": {
+    "off": "关闭",
+    "on": "开启",
+    "androidAuto": "含 Android Auto",
+    "carPlay": "含 CarPlay",
+    "both": "含 Android Auto 和 CarPlay"
+  },
+  "activation": {
+    "title": "应用未激活",
+    "deviceId": "设备 ID:",
+    "enterCode": "输入激活码:",
+    "wrongCode": "无效的激活码",
+    "emptyCode": "请输入激活码",
+    "site": "网站:",
+    "later": "稍后",
+    "laterRemaining": "剩余",
+    "launchOne": "次启动",
+    "launchFew": "次启动",
+    "launchMany": "次启动",
+    "activate": "激活",
+    "delete": "卸载",
+    "activateOnline": "在线激活",
+    "onlineFailed": "在线激活失败"
+  },
+  "remoteApp": {
+    "size": "大小:",
+    "description": "描述:",
+    "downloading": "下载中 ",
+    "downloadingPercent": "%...",
+    "installing": "安装中...",
+    "installed": "已安装!",
+    "error": "错误:",
+    "downloadError": "下载错误",
+    "networkError": "无网络连接"
+  },
+  "uninstall": {
+    "confirmTitle": "卸载 ",
+    "uninstalled": "已卸载！",
+    "replaceConfirm": "无法覆盖安装当前版本。是否卸载应用并安装此版本？应用数据将被清除。"
+  },
+  "appStorage": {
+    "onDisk": "占用空间：",
+    "cache": "缓存：",
+    "data": "数据：",
+    "clear": "清除",
+    "clearDataConfirm": "要清除 %s 的全部数据吗？账号、设置和已下载内容都将被删除。"
+  },
+  "launcherUpdate": {
+    "title": "启动器更新",
+    "latestVersion": "最新版本:",
+    "currentVersion": "当前版本:",
+    "checking": "正在检查更新...",
+    "noUpdate": "无法获取版本信息",
+    "downloadFailed": "下载错误",
+    "installing": "正在安装...",
+    "installSuccess": "已安装!",
+    "changes": "更新内容:"
+  },
+  "accessibilityError": {
+    "title": "启动器未能启动",
+    "reasonNotInstalled": "系统未发现无障碍服务。系统可能仍在启动中,或其他应用正在干扰。",
+    "reasonNotEnabled": "启动器服务未被系统激活。点击「重试」或「重启启动器」。",
+    "reasonNotBinding": "服务已启用但无响应。重启启动器通常可以解决此问题。",
+    "reasonGaveUp": "多次尝试后仍未启动。其他应用可能在启动时使系统过载。",
+    "diagAttempts": "恢复尝试次数:",
+    "diagInstalled": "启动器对系统可见:",
+    "diagEnabled": "启动器已激活:",
+    "diagBootTime": "启动后时间:",
+    "diagYes": "是",
+    "diagNo": "否",
+    "secondsSuffix": "秒",
+    "btnRetry": "卸载启动器",
+    "btnSettings": "无障碍设置",
+    "btnRestart": "重启车机"
+  },
+  "storage": {
+    "title": "设备存储空间即将用尽",
+    "message": "请立即清理空间。清理完成前请勿熄火，否则车机可能无法开机。",
+    "free": "剩余 %d MB"
+  },
+  "taskManager": {
+    "title": "运行中的应用",
+    "empty": "没有运行中的应用",
+    "swipeHint": "向上滑动卡片即可关闭应用",
+    "memory": "内存：已用 %1$s / 共 %2$s · 可用 %3$s",
+    "mb": "MB",
+    "gb": "GB",
+    "notInMemory": "未在内存中",
+    "preset": "预设 %1$d"
+  }
+}

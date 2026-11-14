@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="80.0dip" android:width="80.0dip" android:viewportWidth="80.0" android:viewportHeight="80.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/btn_background" android:pathData="M12,4 L68,4 C72.4,4 76,7.6 76,12 L76,68 C76,72.4 72.4,76 68,76 L12,76 C7.6,76 4,72.4 4,68 L4,12 C4,7.6 7.6,4 12,4 Z" android:strokeColor="@color/btn_border" android:strokeWidth="2.0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M26,26m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M40,26m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M54,26m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M26,40m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M40,40m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M54,40m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M26,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M40,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="@color/btn_active_light" android:pathData="M54,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+</vector>

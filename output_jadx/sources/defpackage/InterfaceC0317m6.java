@@ -1,0 +1,7 @@
+package defpackage;
+
+/* renamed from: m6, reason: case insensitive filesystem */
+/* loaded from: classes.dex */
+public interface InterfaceC0317m6 {
+    InterfaceC0317m6 g();
+}
