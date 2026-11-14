@@ -19,11 +19,13 @@ jobs:
         id: find_apk
         run: |
           echo "Поиск APK файлов в репозитории..."
-          APK_FILES=$(find . -name "*.apk" -type f | grep -v "output_apktool" | grep -v "output_jadx" || true)
+          # Ищем все APK, исключая папки с результатами декомпиляции
+          APK_FILES=$(find . -name "*.apk" -type f \
+            | grep -v "output_apktool" \
+            | grep -v "output_jadx" || true)
           
           if [ -z "$APK_FILES" ]; then
             echo "::error::APK файлы не найдены в репозитории"
-            echo "Содержимое корня:"
             ls -la
             exit 1
           fi
@@ -31,24 +33,40 @@ jobs:
           echo "Найдены APK файлы:"
           echo "$APK_FILES"
           
-          # Берем первый найденный APK
-          APK_PATH=$(echo "$APK_FILES" | head -n 1)
+          # Берём самый большой APK (обычно это и есть целевой)
+          APK_PATH=$(echo "$APK_FILES" | xargs ls -S | head -n 1)
           echo "Используемый файл: $APK_PATH"
-          
           echo "apk_path=$APK_PATH" >> $GITHUB_OUTPUT
           
-          echo "Информация о файле:"
           ls -lh "$APK_PATH"
-          file "$APK_PATH"
 
       - name: Проверить валидность APK
         run: |
           APK="${{ steps.find_apk.outputs.apk_path }}"
-          if ! file "$APK" | grep -q "Zip archive data"; then
-            echo "::error::Файл $APK не является валидным APK/ZIP архивом"
-            head -c 500 "$APK"
+          
+          # Проверка 1: размер файла должен быть > 0
+          SIZE=$(stat -c%s "$APK")
+          if [ "$SIZE" -lt 1000 ]; then
+            echo "::error::Файл $APK слишком мал ($SIZE байт), вероятно повреждён"
             exit 1
           fi
+          
+          # Проверка 2: сигнатура ZIP (PK\x03\x04) в первых байтах
+          MAGIC=$(head -c 4 "$APK" | od -An -tx1 | tr -d ' ')
+          echo "Сигнатура файла: $MAGIC"
+          if [ "$MAGIC" != "504b0304" ] && [ "$MAGIC" != "504b0506" ]; then
+            echo "::error::Файл $APK не имеет сигнатуры ZIP/APK"
+            head -c 200 "$APK" | xxd
+            exit 1
+          fi
+          
+          # Проверка 3: unzip может прочитать список файлов
+          if ! unzip -l "$APK" > /dev/null 2>&1; then
+            echo "::error::unzip не может прочитать архив $APK"
+            exit 1
+          fi
+          
+          echo "✓ Файл валиден, содержит $(unzip -l "$APK" | tail -1 | awk '{print $2}') файлов"
 
       - name: Очистить старые папки декомпиляции
         run: |
