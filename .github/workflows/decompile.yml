@@ -1,0 +1,62 @@
+name: Decompile Large APK to Repo
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: 'Прямая ссылка на скачивание APK'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Скачать текущий репозиторий
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Необходимо для корректной работы с историей и пуша
+
+      - name: Очистить старые папки декомпиляции (если есть)
+        run: |
+          git rm -rf --cached output_apktool output_jadx || true
+          rm -rf output_apktool output_jadx
+
+      - name: Скачать APK файл
+        run: curl -L "${{ inputs.apk_url }}" -o target.apk
+
+      - name: Установить Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Установить apktool и jadx
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apktool unzip
+          # Исправлена прямая ссылка на стабильный релиз jadx
+          wget https://github.com/skylot/jadx/releases/download/v1.5.0/jadx-1.5.0.zip -O jadx.zip
+          unzip -q jadx.zip -d jadx-bin
+          chmod +x jadx-bin/bin/jadx
+
+      - name: Декомпиляция через apktool
+        run: apktool d target.apk -o output_apktool -f
+
+      - name: Декомпиляция через jadx
+        env:
+          JAVA_OPTS: "-Xmx6g"
+        run: jadx-bin/bin/jadx -j 4 -d output_jadx target.apk
+
+      - name: Закоммитить и отправить папки в репозиторий
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output_apktool output_jadx
+          git commit -m "chore: обновить результаты декомпиляции APK" || echo "Нет изменений для коммита"
+          git push
+
+      - name: Очистить временные файлы
+        run: rm -rf target.apk jadx.zip jadx-bin
