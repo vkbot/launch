@@ -1,0 +1,185 @@
+name: Decrypt ALL XOR (smali)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  decrypt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Поиск файлов-кандидатов
+        run: |
+          test -d output_apktool || { echo "Нет output_apktool"; exit 1; }
+          grep -rIlE -e '->[A-Za-z0-9_$]+\(\[B\[B|sput-object [vp][0-9]+, L.*:\[B' --include='*.smali' output_apktool > candidates.txt || true
+          echo "Кандидатов: $(wc -l < candidates.txt)"
+
+      - name: Расшифровка
+        run: |
+          cat > dec.py << 'PYEOF'
+          import os, re, json
+          from collections import defaultdict
+
+          TOKEN  = re.compile(r'-?0[xX][0-9a-fA-F]+[tT]?|-?\d+[tT]?')
+          ARRAY  = re.compile(r':(array_[0-9A-Za-z_$]+)\s+\.array-data\s+1\b(.*?)\.end array-data', re.S)
+          METHOD = re.compile(r'^\.method\b.*?^\.end method', re.S | re.M)
+
+          C_CONST = re.compile(r'^\s*const(/4|/16|/high16)?\s+([vp]\d+),\s*(-?(?:0[xX][0-9a-fA-F]+|\d+)[tTlLsS]?)\s*$')
+          C_NEW   = re.compile(r'^\s*new-array\s+([vp]\d+),\s*([vp]\d+),\s*\[B\s*$')
+          C_FILL  = re.compile(r'^\s*fill-array-data\s+([vp]\d+),\s*:(\S+)\s*$')
+          C_APUT  = re.compile(r'^\s*aput-byte\s+([vp]\d+),\s*([vp]\d+),\s*([vp]\d+)\s*$')
+          C_MOVE  = re.compile(r'^\s*move-object(?:/from16|/16)?\s+([vp]\d+),\s*([vp]\d+)\s*$')
+          C_MRES  = re.compile(r'^\s*move-result-object\s+([vp]\d+)\s*$')
+          C_SGET  = re.compile(r'^\s*sget-object\s+([vp]\d+),\s*(L\S+;->\S+:\[B)\s*$')
+          C_SPUT  = re.compile(r'^\s*sput-object\s+([vp]\d+),\s*(L\S+;->\S+:\[B)\s*$')
+          C_INV   = re.compile(r'^\s*invoke-static(?:/range)?\s*\{([^}]*)\},\s*(L\S+;->\S+?)\(\[B\[B[^)]*\)Ljava/lang/(?:String|CharSequence);\s*$')
+
+          def num(t):
+              t = t.rstrip('tTlLsS')
+              neg = t.startswith('-')
+              if neg: t = t[1:]
+              v = int(t, 16) if t[:2].lower() == '0x' else int(t, 10)
+              return -v if neg else v
+
+          def regs(s):
+              out = []
+              for p in s.split(','):
+                  p = p.strip()
+                  if '..' in p:
+                      a, b = [x.strip() for x in p.split('..')]
+                      out += [f'{a[0]}{i}' for i in range(int(a[1:]), int(b[1:]) + 1)]
+                  elif p:
+                      out.append(p)
+              return out
+
+          def load_arrays(text):
+              d = {}
+              for m in ARRAY.finditer(text):
+                  body = re.sub(r'^\s*[.#:].*$', '', m.group(2), flags=re.M)
+                  try:
+                      d[m.group(1)] = bytes(num(t) & 0xFF for t in TOKEN.findall(body))
+                  except Exception:
+                      pass
+              return d
+
+          def xor(data, key):
+              if not key or not data: return None
+              out = bytes(b ^ key[i % len(key)] for i, b in enumerate(data))
+              try:
+                  s = out.decode('utf-8')
+              except UnicodeDecodeError:
+                  return None
+              return s if all(c.isprintable() or c in '\n\t' for c in s) else None
+
+          def scan(content, statics, collect_only, hits, path):
+              for meth in METHOD.finditer(content):
+                  arrays = load_arrays(meth.group(0))
+                  base = content[:meth.start()].count('\n')
+                  consts, arr = {}, {}
+                  for off, line in enumerate(meth.group(0).split('\n')):
+                      m = C_CONST.match(line)
+                      if m:
+                          v = num(m.group(3))
+                          if m.group(1) == '/high16': v <<= 16
+                          consts[m.group(2)] = v; continue
+                      m = C_NEW.match(line)
+                      if m:
+                          n = consts.get(m.group(2), -1)
+                          if 0 <= n <= 65536: arr[m.group(1)] = bytearray(n)
+                          else: arr.pop(m.group(1), None)
+                          continue
+                      m = C_FILL.match(line)
+                      if m:
+                          if m.group(2) in arrays: arr[m.group(1)] = bytearray(arrays[m.group(2)])
+                          else: arr.pop(m.group(1), None)
+                          continue
+                      m = C_APUT.match(line)
+                      if m:
+                          s, a, i = m.groups()
+                          if a in arr and s in consts and i in consts and 0 <= consts[i] < len(arr[a]):
+                              arr[a][consts[i]] = consts[s] & 0xFF
+                          continue
+                      m = C_MOVE.match(line)
+                      if m:
+                          d, s = m.groups()
+                          if s in arr: arr[d] = bytearray(arr[s])
+                          else: arr.pop(d, None)
+                          if s in consts: consts[d] = consts[s]
+                          continue
+                      m = C_MRES.match(line)
+                      if m: arr.pop(m.group(1), None); continue
+                      m = C_SPUT.match(line)
+                      if m:
+                          if m.group(1) in arr: statics[m.group(2)] = bytes(arr[m.group(1)])
+                          continue
+                      m = C_SGET.match(line)
+                      if m:
+                          if m.group(2) in statics: arr[m.group(1)] = bytearray(statics[m.group(2)])
+                          else: arr.pop(m.group(1), None)
+                          continue
+                      m = C_INV.match(line)
+                      if m and not collect_only:
+                          rr = regs(m.group(1))
+                          if len(rr) >= 2 and rr[0] in arr and rr[1] in arr:
+                              s = xor(bytes(arr[rr[0]]), bytes(arr[rr[1]]))
+                              if s:
+                                  hits.append({'file': path, 'line': base + off + 1, 'callee': m.group(2), 'text': s})
+
+          def main():
+              files = [l.strip() for l in open('candidates.txt', encoding='utf-8') if l.strip()]
+              print(f'Файлов-кандидатов: {len(files)}')
+              docs = []
+              for fp in files:
+                  try:
+                      docs.append((fp, open(fp, encoding='utf-8', errors='ignore').read()))
+                  except Exception:
+                      pass
+              statics, hits = {}, []
+              for fp, c in docs: scan(c, statics, True, hits, fp)
+              for fp, c in docs: scan(c, statics, False, hits, fp)
+
+              uniq = defaultdict(list)
+              for h in hits:
+                  uniq[h['text']].append(f"{h['file'].replace('output_apktool/','')}:{h['line']}")
+
+              os.makedirs('decrypted_xor', exist_ok=True)
+              with open('decrypted_xor/strings_all.txt', 'w', encoding='utf-8') as f:
+                  f.write(f'Уникальных строк: {len(uniq)} | всего вхождений: {len(hits)}\n\n')
+                  for s in sorted(uniq):
+                      f.write(f'{s!r}\n')
+                      for loc in uniq[s][:8]:
+                          f.write(f'      {loc}\n')
+              with open('decrypted_xor/strings_plain.txt', 'w', encoding='utf-8') as f:
+                  for s in sorted(uniq):
+                      f.write(s.replace('\n', '\\n') + '\n')
+              json.dump([{'text': k, 'locs': v} for k, v in sorted(uniq.items())],
+                        open('decrypted_xor/strings.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+              print(f'Вхождений: {len(hits)} | уникальных: {len(uniq)} | static-ключей: {len(statics)}')
+              interesting = re.compile(r'https?://|permission|com\.example|password|token|\.so$|\.zip$|settings|content://|/data/|/system/', re.I)
+              print('--- интересное ---')
+              for s in sorted(uniq):
+                  if interesting.search(s): print(' ', repr(s))
+
+          main()
+          PYEOF
+          python3 dec.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add decrypted_xor
+          if ! git diff --staged --quiet; then
+            git commit -m "xor: полная расшифровка строк из smali"
+            git push
+          fi
+
+      - name: Cleanup
+        run: rm -f dec.py candidates.txt
